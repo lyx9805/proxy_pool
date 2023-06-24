@@ -171,6 +171,23 @@ class ProxyFetcher(object):
         except Exception as e:
             print(e)
 
+    @staticmethod
+    def MyProxy01():
+        url_list = ['https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/https.txt',
+                    'https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/http.txt',
+                    'https://raw.githubusercontent.com/mmpx12/proxy-list/master/https.txt',
+                    'https://raw.githubusercontent.com/mmpx12/proxy-list/master/http.txt',
+                    'https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/http.txt',
+                    'https://raw.githubusercontent.com/UptimerBot/proxy-list/master/proxies_anonymous/http.txt',
+                    'https://raw.githubusercontent.com/monosans/proxy-list/main/proxies_anonymous/http.txt',
+                    'https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt']
+
+        for url in url_list:
+            ip_list = WebRequest().get(url, timeout=10).text
+            for ip in ip_list.split('\n'):
+                yield ip
+
+
     # @staticmethod
     # def wallProxy01():
     #     """

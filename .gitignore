@@ -2,3 +2,5 @@
 docs/_build
 *.pyc
 *.log
+temp.py
+docker-compose.yaml
